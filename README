@@ -17,31 +17,25 @@ What is gLabels
 gLabels is a small stand-alone program for creating labels and business
 cards using a laser or ink-jet printer.
 
-How to compile and install glabels from source code in Ubuntu 13.10 64-bit
-===========================================================================
+How to compile and install newest version of glabels from Github in Ubuntu 14.04 LTS 64-bit
+===========================================================================================
 
 Open a Terminal and executing the following commands one by one:
 
 sudo apt-get update
-
-sudo apt-get remove glabels
-
+sudo apt-get purge glabels
+sudo apt-get build-dep glabels
+sudo apt-get install checkinstall unp build-essential git
 sudo apt-get install libgtk2.0-dev libgnomeui-dev libxml2-dev libglade2-dev libebook1.2-dev gtk-doc-tools libyelp-dev yelp-tools librsvg2-dev
-
+cd
+rm -rf glabels
 git clone git://git.gnome.org/glabels glabels
-
 cd glabels/
-
 ./autogen.sh
-
 make
-
 sudo make install
-
 sudo ldconfig /usr/local/lib
-
-glabels-3-batch --help
-
+glabels-3-batch  --help
 glabels-3
 
 
